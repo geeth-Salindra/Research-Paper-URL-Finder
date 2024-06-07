@@ -4,7 +4,6 @@ import requests
 from urllib.parse import urlencode
 
 
-# Function to get URL for the provided details
 def get_url():
     title = title_entry.get()
     authors = authors_entry.get()
@@ -33,11 +32,8 @@ def get_url():
         messagebox.showerror("Error", f"An error occurred: {e}")
 
 
-# Create main window
 root = tk.Tk()
 root.title("Research Paper URL Finder")
-
-# Disable window resizing
 root.resizable(False, False)
 
 # Title
@@ -64,13 +60,10 @@ url_text_label.grid(row=3, column=0, padx=10, pady=5, sticky="e")
 url_text = tk.Text(root, width=30, height=1)
 url_text.grid(row=3, column=1, padx=10, pady=5)
 
-# Search button
 search_button = tk.Button(root, text="Search", command=get_url)
 search_button.grid(row=4, column=0, columnspan=2, padx=50, pady=10, sticky="e")
 search_button.config(height=1, width=10)
 
-# Configure grid row weights
 root.grid_rowconfigure(4, weight=1)
 
-# Start the GUI event loop
 root.mainloop()
